@@ -1,0 +1,14 @@
+---
+- name: 'Generating Inventory'
+  hosts: local
+  tasks:
+      - name: 'Generating Inventory'
+        copy:
+         dest: "/home/osboxes/Synchro_Lab01/Playbooks/Inventory.txt"
+         content: |
+                   localhost ansible_connection= localhost
+
+                   [webserver]
+                   synchro.lab01 ansible_host= plab01.eastus.cloudapp.azure.com ansible_connection= ssh ansible_user= synchro
+
+        

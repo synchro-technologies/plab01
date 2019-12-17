@@ -1,0 +1,29 @@
+---
+
+- name: 'Update all packages'
+  hosts: synchro.lab01
+  become: yes
+  tasks:
+        - name: 'Update all packages'
+          apt:
+            update_cache: yes 
+
+        - name: 'Set timezone to "Argentina/Buenos_Aires"'
+          timezone:
+                name: America/Argentina/Buenos_Aires
+        
+        - name: 'Install mc (Midnight Commander)'
+          apt:
+           name: mc
+        
+        - name: 'Install build-essential'
+          apt:
+           name: build-essential
+        
+        - name: 'Install zsh'
+          apt:
+           name: zsh
+
+        - name: 'Install tmux'
+          apt:
+           name: tmux
