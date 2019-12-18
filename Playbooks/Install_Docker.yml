@@ -1,0 +1,7 @@
+---
+- name: 'Install Docker'
+  hosts: synchro.lab01
+  become: yes
+  tasks:
+     - apt:
+        name: docker.io
