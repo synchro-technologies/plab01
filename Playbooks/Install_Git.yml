@@ -1,0 +1,9 @@
+---
+- name: 'Install git'
+  hosts: synchro.lab01
+  become: yes
+  tasks:
+        
+     - name: 'Install git'
+       apt:
+        name: git
