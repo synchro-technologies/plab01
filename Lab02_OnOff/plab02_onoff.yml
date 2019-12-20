@@ -7,7 +7,7 @@
     - name: AzureVM_On
       azure_rm_virtualmachine:
             resource_group: pasantes
-            name: plab01
+            name: plab02
             client_id: d189a1bd-dde9-474a-bea5-e94385c1dd77
             secret: iTROeV:MUI56O8i8KYgF:AG/=DsIMp_=
             tenant: bc07d099-091f-4ef3-aa8f-7bdf279319fb
@@ -22,7 +22,7 @@
     - name: AzureVM_Off
       azure_rm_virtualmachine:
             resource_group: pasantes
-            name: plab01
+            name: plab02
             client_id: d189a1bd-dde9-474a-bea5-e94385c1dd77
             secret: iTROeV:MUI56O8i8KYgF:AG/=DsIMp_=
             tenant: bc07d099-091f-4ef3-aa8f-7bdf279319fb

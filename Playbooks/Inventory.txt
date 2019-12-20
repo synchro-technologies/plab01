@@ -1,0 +1,5 @@
+localhost ansible_connection=local
+
+[webserver]
+synchro.lab01 ansible_host=plab01.eastus.cloudapp.azure.com ansible_connection=ssh ansible_user=synchro ansible_become_pass=Pl4b01.201912$!
+synchro.lab02 ansible_host=plab02.eastus.cloudapp.azure.com ansible_connection=ssh ansible_user=synchro ansible_become_pass=Pl4b02.201912$! 

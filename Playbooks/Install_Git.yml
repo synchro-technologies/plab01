@@ -1,6 +1,6 @@
 ---
 - name: 'Install git'
-  hosts: synchro.lab01
+  hosts: synchro.lab0{{ num }}
   become: yes
   tasks:
         

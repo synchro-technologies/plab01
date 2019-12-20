@@ -1,7 +1,7 @@
 ---
 
 - name: 'Update all packages'
-  hosts: synchro.lab01
+  hosts: synchro.lab0{{ num }}
   become: yes
   tasks:
         - name: 'Update all packages'

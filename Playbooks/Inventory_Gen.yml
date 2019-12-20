@@ -4,11 +4,18 @@
   tasks:
       - name: 'Generating Inventory'
         copy:
-         dest: "/home/osboxes/Synchro_Lab01/Playbooks/Inventory.txt"
+         dest: "/home/osboxes/Synchro_Labs/Playbooks/Inventory.txt"
          content: |
-                   localhost ansible_connection= localhost
+                   localhost ansible_connection=local
 
-                   [webserver]
-                   synchro.lab01 ansible_host= plab01.eastus.cloudapp.azure.com ansible_connection= ssh ansible_user= synchro
-
-        
+                   [webserver01]
+                   synchro.lab01 ansible_host=plab01.eastus.cloudapp.azure.com ansible_connection=ssh ansible_user=synchro
+                   
+                   [webserver02]
+                   synchro.lab02 ansible_host=plab02.eastus.cloudapp.azure.com ansible_connection=ssh ansible_user=synchro           
+                
+                   [webserver01:vars]
+                   ansible_become_pass=Pl4b01.201912$!
+                
+                   [webserver02:vars]
+                   ansible_become_pass=Pl4b02.201912$!
