@@ -1,0 +1,36 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: AzureVM_On
+      azure_rm_virtualmachine:
+            resource_group: pasantes
+            name: plab01
+            client_id: d189a1bd-dde9-474a-bea5-e94385c1dd77
+            secret: iTROeV:MUI56O8i8KYgF:AG/=DsIMp_=
+            tenant: bc07d099-091f-4ef3-aa8f-7bdf279319fb
+            subscription_id: 5884d1e1-7199-4c1d-b39a-5216a7470b15
+            started: yes
+      tags: [ 'on' ]
+
+    - debug:
+            msg: "Estado de la VM: {{ ansible_facts.azure_vm.powerstate }}"
+      tags: [ 'on' ]
+        
+    - name: AzureVM_Off
+      azure_rm_virtualmachine:
+            resource_group: pasantes
+            name: plab01
+            client_id: d189a1bd-dde9-474a-bea5-e94385c1dd77
+            secret: iTROeV:MUI56O8i8KYgF:AG/=DsIMp_=
+            tenant: bc07d099-091f-4ef3-aa8f-7bdf279319fb
+            subscription_id: 5884d1e1-7199-4c1d-b39a-5216a7470b15
+            started: no
+            allocated: no
+      tags: [ 'never', 'off' ]
+
+    - debug:
+            msg: "Estado de la VM: {{ ansible_facts.azure_vm.powerstate }}"
+      tags: [ 'never', 'off' ]
