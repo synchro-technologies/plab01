@@ -1,0 +1,10 @@
+---
+- name: 'Clone git repository'
+  hosts: localhost
+  roles:
+     - role: gantsign.git_user
+       users:
+         - username: osboxes
+           git_user_name: sebastrodriguez
+           git_user_email: sebasrodruy@gmail.com
+           git_user_force: no 
